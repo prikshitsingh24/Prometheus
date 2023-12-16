@@ -1,8 +1,6 @@
 #pragma once
-
 #include "Prometheus/Core.h"
-#include <string>
-#include <functional>
+
 
 namespace Prometheus {
 	 

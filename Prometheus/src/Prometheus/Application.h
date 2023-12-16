@@ -1,5 +1,6 @@
 #pragma once
 #include "Core.h"
+#include <Prometheus/Window.h>
 
 namespace Prometheus {
 	class PROMETHEUS_API Application
@@ -8,6 +9,9 @@ namespace Prometheus {
 		Application();
 		virtual ~Application();
 		void Run();
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	//To be defined in client..

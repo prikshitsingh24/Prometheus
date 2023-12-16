@@ -10,12 +10,20 @@ workspace "Prometheus"
 
 outputdir="%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir={}
+IncludeDir['GLFW']="Prometheus/vendor/GLFW/include"
+include "Prometheus/vendor/GLFW"
+
 project "Prometheus"
 	location "Prometheus"
 	kind "SharedLib"
 	language "C++"
 	targetdir ("bin/"..outputdir.."/%{prj.name}")
 	objdir ("bin-int/"..outputdir.."/%{prj.name}")
+	
+	pchheader "ptpch.h"
+	pchsource "Prometheus/src/ptpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -24,7 +32,14 @@ project "Prometheus"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
+		
 	}
 	filter "system:windows"
 		cppdialect "C++17"
@@ -78,7 +93,6 @@ project "Sandbox"
 	}
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
