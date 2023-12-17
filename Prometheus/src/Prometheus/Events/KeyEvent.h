@@ -31,7 +31,7 @@ namespace Prometheus {
 			ss << "KeyPressedEvent" << m_keyCode << "(" << m_RepeatCount << "repeat)";
 			return ss.str();
 		}
-		EVENT_CLASS_TYPE(keyPressed);
+		EVENT_CLASS_TYPE(KeyPressed);
 	private:
 		int m_RepeatCount;
 	};

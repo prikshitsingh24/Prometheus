@@ -72,10 +72,10 @@ namespace Prometheus {
 		EVENT_CLASS_TYPE(MouseButtonPressed);
 	};
 
-	class PROMETHEUS_API MouseReleasedEvent :public MouseButtonEvent
+	class PROMETHEUS_API MouseButtonReleasedEvent :public MouseButtonEvent
 	{
 	public:
-		MouseReleasedEvent(int button)
+		MouseButtonReleasedEvent(int button)
 			:MouseButtonEvent(button){}
 		std::string ToString() const override
 		{
