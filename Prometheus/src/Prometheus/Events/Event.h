@@ -1,4 +1,5 @@
 #pragma once
+#include "ptpch.h"
 #include "Prometheus/Core.h"
 
 
@@ -40,7 +41,8 @@ namespace Prometheus {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
+		inline bool& getHandled() { return m_Handled; }
+	private:
 		bool m_Handled = false;
 	};
 

@@ -4,6 +4,8 @@
 
 #include "Prometheus/Application.h"
 
+#include "Prometheus/Layer.h"
+
 //------------------Logging--------------------
 #include "Prometheus/Log.h"
 //----------------------------------------------

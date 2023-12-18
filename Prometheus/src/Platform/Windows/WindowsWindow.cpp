@@ -4,6 +4,7 @@
 #include "Prometheus/Events/ApplicationEvent.h"
 #include "Prometheus/Events/KeyEvent.h"
 #include "Prometheus/Events/MouseEvent.h"
+#include <glad/glad.h>
 
 namespace Prometheus {
 	static bool s_GLFWInitialized = false;
@@ -66,6 +67,8 @@ namespace Prometheus {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		PT_CORE_ASSERT(status, "failed to initialize Glad");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
