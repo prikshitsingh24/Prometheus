@@ -23,3 +23,5 @@
 
 #define BIT(x) (1<<x)
 
+#define PT_BIND_EVENT(fn) std::bind(&fn,this,std::placeholders::_1)
+

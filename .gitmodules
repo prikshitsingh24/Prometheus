@@ -7,3 +7,6 @@
 [submodule "myGLFW"]
 	path = Prometheus/vendor/GLFW
 	url = https://github.com/PrikshitSingh24/glfw.git
+[submodule "Prometheus/vendor/imgui"]
+	path = Prometheus/vendor/imgui
+	url = https://github.com/TheCherno/imgui.git

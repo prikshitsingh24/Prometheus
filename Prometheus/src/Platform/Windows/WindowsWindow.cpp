@@ -7,6 +7,8 @@
 #include <glad/glad.h>
 
 namespace Prometheus {
+
+
 	static bool s_GLFWInitialized = false;
 
 	static void GLFWErrorCallback(int error,const char* description) {
@@ -48,6 +50,7 @@ namespace Prometheus {
 	{
 		return m_Data.VSync;
 	}
+
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
@@ -115,6 +118,13 @@ namespace Prometheus {
 			}
 			});
 
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window,unsigned int character) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			KeyTypedEvent event(character);
+			data.EventCallback(event);
+			
+			});
+
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) {
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 			switch (action) {
@@ -145,10 +155,8 @@ namespace Prometheus {
 			data.EventCallback(event);
 			});
 	}
-
-	void WindowsWindow::Shutdown() 
+	void WindowsWindow::Shutdown()
 	{
-		glfwDestroyWindow(m_Window);
+		glfwDestroyWindow(m_Window);		
 	}
-
 }
