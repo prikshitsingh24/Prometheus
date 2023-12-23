@@ -14,6 +14,7 @@ IncludeDir={}
 IncludeDir['GLFW']="Prometheus/vendor/GLFW/include"
 IncludeDir['Glad']="Prometheus/vendor/Glad/include"
 IncludeDir['ImGui']="Prometheus/vendor/imgui"
+IncludeDir['glm']="Prometheus/vendor/glm"
 include "Prometheus/vendor/GLFW"
 include "Prometheus/vendor/Glad"
 include "Prometheus/vendor/imgui"
@@ -39,7 +40,8 @@ project "Prometheus"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 	links
 	{
@@ -97,7 +99,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Prometheus/vendor/spdlog/include",
-		"Prometheus/src"
+		"Prometheus/src",
+		"%{IncludeDir.glm}"
 	}
 	links
 	{

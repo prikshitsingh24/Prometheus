@@ -4,6 +4,7 @@
 #include "Prometheus/Events/ApplicationEvent.h"
 #include "Prometheus/LayerStack.h"
 #include "Prometheus/Input.h"
+#include "Prometheus/ImGui/ImGuiLayer.h"
 
 namespace Prometheus {
 	class PROMETHEUS_API Application
@@ -20,6 +21,7 @@ namespace Prometheus {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
