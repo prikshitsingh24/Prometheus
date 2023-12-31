@@ -5,7 +5,7 @@
 
 namespace Prometheus {
 
-	class PROMETHEUS_API KeyEvent:public Event
+	class  KeyEvent:public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_keyCode; }
@@ -18,7 +18,7 @@ namespace Prometheus {
 		int m_keyCode;
 	};
 
-	class PROMETHEUS_API KeyPressedEvent :public KeyEvent
+	class  KeyPressedEvent :public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode,int repeatCount)
@@ -36,7 +36,7 @@ namespace Prometheus {
 		int m_RepeatCount;
 	};
 
-	class PROMETHEUS_API KeyReleasedEvent :public KeyEvent
+	class  KeyReleasedEvent :public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)
@@ -50,7 +50,7 @@ namespace Prometheus {
 		EVENT_CLASS_TYPE(KeyReleased);
 	};
 
-	class PROMETHEUS_API KeyTypedEvent :public KeyEvent
+	class  KeyTypedEvent :public KeyEvent
 	{
 	public:
 		KeyTypedEvent(int keycode)

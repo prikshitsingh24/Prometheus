@@ -21,8 +21,11 @@ include "Prometheus/vendor/imgui"
 
 project "Prometheus"
 	location "Prometheus"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
 	targetdir ("bin/"..outputdir.."/%{prj.name}")
 	objdir ("bin-int/"..outputdir.."/%{prj.name}")
 	
@@ -52,8 +55,7 @@ project "Prometheus"
 		
 	}
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -62,30 +64,24 @@ project "Prometheus"
 		 "PT_BUILD_DLL",
 		 "GLFW_INCLUDE_NONE"
 		}
-		
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir.. "/Sandbox")
-		}
 
 	filter "configurations:Debug"
 		defines "PT_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		symbols "on"
 	
 	filter "configurations:Release"
 		defines "PT_RELEASE"
-		buildoptions "/MD"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "PT_DIST"
-		buildoptions "/MD"
-		optimize "On"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	language "C++"
 	targetdir ("bin/".. outputdir .."/%{prj.name}")
@@ -107,7 +103,6 @@ project "Sandbox"
 		"Prometheus"
 	}
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -117,12 +112,12 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "PT_DEBUG"
-		symbols "On"
+		symbols "on"
 	
 	filter "configurations:Release"
 		defines "PT_RELEASE"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "PT_DIST"
-		optimize "On"
+		optimize "on"

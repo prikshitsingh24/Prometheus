@@ -7,7 +7,7 @@
 #include "Prometheus/ImGui/ImGuiLayer.h"
 
 namespace Prometheus {
-	class PROMETHEUS_API Application
+	class  Application
 	{
 	public:
 		Application();

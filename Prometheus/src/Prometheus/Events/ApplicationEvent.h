@@ -4,7 +4,7 @@
 
 namespace Prometheus {
 	
-	class PROMETHEUS_API WindowResizeEvent : public Event 
+	class  WindowResizeEvent : public Event 
 	{
 	public:
 		WindowResizeEvent(unsigned int width,unsigned int height)
@@ -26,7 +26,7 @@ namespace Prometheus {
 		unsigned int m_Width, m_Height;
 	};
 
-	class PROMETHEUS_API WindowCloseEvent : public Event
+	class  WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() { 
@@ -37,7 +37,7 @@ namespace Prometheus {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
 
-	class PROMETHEUS_API AppTickEvent : public Event
+	class  AppTickEvent : public Event
 	{
 		AppTickEvent() {}
 
@@ -45,7 +45,7 @@ namespace Prometheus {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
 
-	class PROMETHEUS_API AppUpdateEvent : public Event
+	class  AppUpdateEvent : public Event
 	{
 		AppUpdateEvent() {}
 
@@ -53,7 +53,7 @@ namespace Prometheus {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
 
-	class PROMETHEUS_API AppRenderEvent : public Event
+	class  AppRenderEvent : public Event
 	{
 		AppRenderEvent() {}
 

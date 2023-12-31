@@ -18,7 +18,7 @@ namespace Prometheus {
 		{}
 	};
 
-	class PROMETHEUS_API Window
+	class  Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;

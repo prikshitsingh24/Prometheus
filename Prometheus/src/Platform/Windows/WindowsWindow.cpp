@@ -4,7 +4,8 @@
 #include "Prometheus/Events/ApplicationEvent.h"
 #include "Prometheus/Events/KeyEvent.h"
 #include "Prometheus/Events/MouseEvent.h"
-#include <glad/glad.h>
+#include "Platform/Vulkan/VulkanContext.h"
+
 
 namespace Prometheus {
 
@@ -28,12 +29,6 @@ namespace Prometheus {
 	WindowsWindow::~WindowsWindow()
 	{
 		Shutdown();
-	}
-
-	void WindowsWindow::OnUpdate()
-	{
-		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
@@ -60,6 +55,7 @@ namespace Prometheus {
 
 		PT_CORE_INFO("Creating window {0} ({1},{2})", props.Title, props.Width, props.Height);
 
+
 		if (!s_GLFWInitialized) {
 
 			int success = glfwInit();
@@ -69,9 +65,9 @@ namespace Prometheus {
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		PT_CORE_ASSERT(status, "failed to initialize Glad");
+
+		m_Context = new VulkanContext(m_Window);
+		m_Context->Init();
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -155,6 +151,13 @@ namespace Prometheus {
 			data.EventCallback(event);
 			});
 	}
+
+	void WindowsWindow::OnUpdate()
+	{
+		glfwPollEvents();
+		m_Context->SwapBuffers();
+	}
+
 	void WindowsWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_Window);		

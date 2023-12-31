@@ -4,7 +4,7 @@
 
 namespace Prometheus {
 
-	class PROMETHEUS_API LayerStack
+	class  LayerStack
 	{
 	public:
 		LayerStack();

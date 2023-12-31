@@ -2,7 +2,7 @@
 #include "Core.h"
 
 namespace Prometheus {
-	class PROMETHEUS_API Input
+	class  Input
 	{
 	public:
 		static bool IsKeyPressed(int Keycode) { return s_Instance->IsKeyPressedImpl(Keycode); }

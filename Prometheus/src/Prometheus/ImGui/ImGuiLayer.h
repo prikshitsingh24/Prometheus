@@ -6,7 +6,7 @@
 #include "Prometheus/Events/ApplicationEvent.h"
 
 namespace Prometheus {
-	class PROMETHEUS_API ImGuiLayer:public Layer
+	class  ImGuiLayer:public Layer
 	{
 	public:
 		ImGuiLayer();

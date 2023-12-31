@@ -2,9 +2,9 @@
 
 #ifdef PT_PLATFORM_WINDOWS
 	#ifdef PT_BUILD_DLL
-		#define PROMETHEUS_API __declspec(dllexport)
+		#define  __declspec(dllexport)
 	#else
-		#define PROMETHEUS_API __declspec(dllimport)
+		#define  __declspec(dllimport)
 	#endif
 #else
 	#error Prometheus only supports Windows!

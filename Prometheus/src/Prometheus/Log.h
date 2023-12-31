@@ -6,7 +6,7 @@
 
 namespace Prometheus {
 
-	class PROMETHEUS_API Log
+	class  Log
 	{
 	public:
 		static void Init();

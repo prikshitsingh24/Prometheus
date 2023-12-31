@@ -1,6 +1,7 @@
 #pragma once
 #include <Prometheus/Window.h>
 #include <GLFW/glfw3.h>
+#include "Prometheus/Renderer/GraphicsContext.h"
 
 namespace Prometheus {
 
@@ -24,6 +25,7 @@ namespace Prometheus {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
