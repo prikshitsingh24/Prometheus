@@ -5,10 +5,10 @@ struct GLFWwindow;
 
 namespace Prometheus {
 
-	class VulkanContext : public GraphicsContext
+	class OpenGLContext : public GraphicsContext
 	{
 	public:
-		VulkanContext(GLFWwindow* m_windowHandle);
+		OpenGLContext(GLFWwindow* windowHandle);
 		virtual void Init() override;
 		virtual void SwapBuffers() override;
 	private:

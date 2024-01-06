@@ -4,7 +4,7 @@
 #include "Prometheus/Events/ApplicationEvent.h"
 #include "Prometheus/Events/KeyEvent.h"
 #include "Prometheus/Events/MouseEvent.h"
-#include "Platform/Vulkan/VulkanContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 
 namespace Prometheus {
@@ -66,7 +66,7 @@ namespace Prometheus {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 
-		m_Context = new VulkanContext(m_Window);
+		m_Context = new OpenGLContext(m_Window);
 		m_Context->Init();
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);

@@ -19,6 +19,7 @@ include "Prometheus/vendor/GLFW"
 include "Prometheus/vendor/Glad"
 include "Prometheus/vendor/imgui"
 
+
 project "Prometheus"
 	location "Prometheus"
 	kind "StaticLib"
@@ -52,8 +53,8 @@ project "Prometheus"
 		"Glad",
 		"ImGui",
 		"opengl32.lib"
-		
 	}
+	
 	filter "system:windows"
 		staticruntime "on"
 		systemversion "latest"
