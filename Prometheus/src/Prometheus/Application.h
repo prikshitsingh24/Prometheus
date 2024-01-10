@@ -6,6 +6,8 @@
 #include "Prometheus/Input.h"
 #include "Prometheus/ImGui/ImGuiLayer.h"
 #include "Prometheus/Renderer/Shader.h"
+#include "Prometheus/Renderer/Buffer.h"
+#include "Prometheus/Renderer/VertexArray.h"
 
 namespace Prometheus {
 	class  Application
@@ -25,8 +27,12 @@ namespace Prometheus {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
-		std::unique_ptr<Shader> m_Shader;
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<VertexArray> m_SquareVA;
+		std::shared_ptr<Shader> m_Shader2;
+		
 	private:
 		static Application* s_Instance;
 		
