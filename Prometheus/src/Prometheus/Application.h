@@ -8,6 +8,7 @@
 #include "Prometheus/Renderer/Shader.h"
 #include "Prometheus/Renderer/Buffer.h"
 #include "Prometheus/Renderer/VertexArray.h"
+#include "Prometheus/Renderer/OrthographicCamera.h"
 
 namespace Prometheus {
 	class  Application
@@ -27,11 +28,7 @@ namespace Prometheus {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<VertexArray> m_SquareVA;
-		std::shared_ptr<Shader> m_Shader2;
+		
 		
 	private:
 		static Application* s_Instance;
