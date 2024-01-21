@@ -1,6 +1,7 @@
 #pragma once
 #include "Prometheus/Events/Event.h"
 #include "Prometheus/Core.h"
+#include <Prometheus/Core/Timestep.h>
 
 namespace Prometheus {
 
@@ -12,7 +13,7 @@ namespace Prometheus {
 
 		virtual void OnAttach() {};
 		virtual void OnDetach() {};
-		virtual void OnUpdate() {};
+		virtual void OnUpdate(Timestep ts) {};
 		virtual void OnImGuiRender() {};
 		virtual void OnEvent(Event& event) {};
 

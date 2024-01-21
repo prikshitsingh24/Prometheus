@@ -9,6 +9,7 @@
 #include "Prometheus/Renderer/Buffer.h"
 #include "Prometheus/Renderer/VertexArray.h"
 #include "Prometheus/Renderer/OrthographicCamera.h"
+#include "Prometheus/Core/Timestep.h"
 
 namespace Prometheus {
 	class  Application
@@ -28,7 +29,7 @@ namespace Prometheus {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-		
+		float m_LastFrameTime=0.0f;
 		
 	private:
 		static Application* s_Instance;

@@ -1,5 +1,5 @@
 #pragma once
-
+#include <memory>
 #ifdef PT_PLATFORM_WINDOWS
 	#ifdef PT_BUILD_DLL
 		#define  __declspec(dllexport)
@@ -25,3 +25,11 @@
 
 #define PT_BIND_EVENT(fn) std::bind(&fn,this,std::placeholders::_1)
 
+namespace Prometheus{
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+
+}

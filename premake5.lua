@@ -15,6 +15,7 @@ IncludeDir['GLFW']="Prometheus/vendor/GLFW/include"
 IncludeDir['Glad']="Prometheus/vendor/Glad/include"
 IncludeDir['ImGui']="Prometheus/vendor/imgui"
 IncludeDir['glm']="Prometheus/vendor/glm"
+IncludeDir['stb_image']="Prometheus/vendor/stb_image"
 include "Prometheus/vendor/GLFW"
 include "Prometheus/vendor/Glad"
 include "Prometheus/vendor/imgui"
@@ -37,6 +38,9 @@ project "Prometheus"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp"
+		
 	}
 	includedirs
 	{
@@ -45,7 +49,8 @@ project "Prometheus"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 	links
 	{
@@ -97,7 +102,8 @@ project "Sandbox"
 	{
 		"Prometheus/vendor/spdlog/include",
 		"Prometheus/src",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}"
 	}
 	links
 	{
