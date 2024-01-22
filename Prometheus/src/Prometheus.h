@@ -9,6 +9,7 @@
 #include "Prometheus/Layer.h"
 #include "Prometheus/ImGui/ImGuiLayer.h"
 #include "Prometheus/Core/Timestep.h"
+#include "Prometheus/OrthographicCameraController.h"
 
 //----------------Renderer---------------------------
 #include "Prometheus/Renderer/Renderer.h"

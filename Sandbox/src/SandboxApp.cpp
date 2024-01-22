@@ -7,7 +7,7 @@
 class ExampleLayer :public Prometheus::Layer {
 public:
 	ExampleLayer()
-		:Layer("Example"), m_Camera(-2.0f, 2.0f, -2.0f, 2.0f), m_CameraPosition(0.0f)
+		:Layer("Example"), m_CameraController(1280.0f/720.0f), m_CameraPosition(0.0f)
 	{
 		m_VertexArray.reset(Prometheus::VertexArray::Create());
 
@@ -106,33 +106,15 @@ public:
 	void OnUpdate(Prometheus::Timestep ts) override
 	{
 		
-		if (Prometheus::Input::IsKeyPressed(PT_KEY_LEFT)) {
-			m_CameraPosition.x -= m_CameraSpeed * ts;
-		}
-		else if (Prometheus::Input::IsKeyPressed(PT_KEY_RIGHT)) {
-			m_CameraPosition.x += m_CameraSpeed * ts;
-		}
-		if (Prometheus::Input::IsKeyPressed(PT_KEY_UP)) {
-			m_CameraPosition.y += m_CameraSpeed * ts;
-		}
-		else if (Prometheus::Input::IsKeyPressed( PT_KEY_DOWN)) {
-			m_CameraPosition.y -= m_CameraSpeed * ts;
-		}
-		if (Prometheus::Input::IsKeyPressed(PT_KEY_A)) {
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		}
-		if (Prometheus::Input::IsKeyPressed(PT_KEY_D)) {
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-		}
+		m_CameraController.OnUpdate(ts);
 
 		Prometheus::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Prometheus::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
+		
 
-		Prometheus::Renderer::BeginScene(m_Camera);
-
+		Prometheus::Renderer::BeginScene(m_CameraController.GetCamera());
+		
 
 		glm::vec4 redColor(0.8f, 0.2f, 0.3f, 1.0f);
 
@@ -159,7 +141,7 @@ public:
 	}
 	void OnEvent(Prometheus::Event& e) override
 	{
-		
+		m_CameraController.OnEvent(e);
 	}
 private:
 	Prometheus::Ref<Prometheus::Shader> m_Shader;
@@ -170,7 +152,7 @@ private:
 
 	Prometheus::Ref<Prometheus::Texture2D> m_Texture;
 
-	Prometheus::OrthographicCamera m_Camera;
+	Prometheus::OrthographicCameraController m_CameraController;
 	glm::vec3 m_CameraPosition;
 	float m_CameraSpeed = 5.0f;
 	float m_CameraRotation=0.0f;

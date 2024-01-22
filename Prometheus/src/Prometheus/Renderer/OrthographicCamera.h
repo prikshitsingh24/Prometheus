@@ -8,6 +8,8 @@ namespace Prometheus {
 	public:
 		OrthographicCamera(float left, float right, float bottom, float top);
 
+		void SetProjection(float left, float right, float bottom, float top);
+
 		const glm::vec3& GetPosition() { return m_Position; }
 		float GetRotation()const { return m_Rotation; }
 		void SetPosition(const glm::vec3& position) { m_Position = position; RecalculateViewMatrix(); }
