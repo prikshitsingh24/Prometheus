@@ -93,9 +93,9 @@ public:
 			}		
 
 		)";
-		m_Shader.reset(Prometheus::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader= Prometheus::Shader::Create("VertexPosition",vertexSrc, fragmentSrc);
 
-		m_Shader2.reset(Prometheus::Shader::Create("assets/Shaders/Texture.glsl"));
+		m_Shader2=Prometheus::Shader::Create("assets/Shaders/Texture.glsl");
 
 		m_Texture= Prometheus::Texture2D::Create("assets/textures/1.png");
 
@@ -142,10 +142,12 @@ public:
 		std::dynamic_pointer_cast<Prometheus::OpenGLShader>(m_Shader2)->UploadUniformFloat3("u_Color",m_SquareColor);
 
 		m_Texture->Bind();
+
+		Prometheus::Renderer::Submit(m_Shader, m_VertexArray);
 				
 		Prometheus::Renderer::Submit(m_Shader2, m_SquareVA);
 			
-		//Prometheus::Renderer::Submit(m_Shader, m_VertexArray);
+		
 
 		Prometheus::Renderer::EndScene();
 	}
