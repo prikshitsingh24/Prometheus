@@ -1,6 +1,6 @@
 #pragma once
-#include "Prometheus/Core.h"
-#include "Prometheus/Layer.h"
+#include "Prometheus/Core/Core.h"
+#include "Prometheus/Core/Layer.h"
 #include "Prometheus/Events/KeyEvent.h"
 #include "Prometheus/Events/MouseEvent.h"
 #include "Prometheus/Events/ApplicationEvent.h"

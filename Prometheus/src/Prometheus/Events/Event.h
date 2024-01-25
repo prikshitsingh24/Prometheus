@@ -1,6 +1,6 @@
 #pragma once
 #include "ptpch.h"
-#include "Prometheus/Core.h"
+#include "Prometheus/Core/Core.h"
 
 
 namespace Prometheus {

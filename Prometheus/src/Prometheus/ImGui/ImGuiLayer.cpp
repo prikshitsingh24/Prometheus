@@ -4,7 +4,7 @@
 #include "backends/imgui_impl_opengl3.h"
 #include "backends/imgui_impl_glfw.h"
 #include <GLFW/glfw3.h>
-#include "Prometheus/Application.h"
+#include "Prometheus/Core/Application.h"
 
 
 namespace Prometheus {

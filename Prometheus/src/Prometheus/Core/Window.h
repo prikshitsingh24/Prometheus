@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ptpch.h"
-#include "Core.h"
-#include "Events/Event.h"
+#include "Prometheus/Core/Core.h"
+#include "Prometheus/Events/Event.h"
 
 namespace Prometheus {
 	struct WindowProps

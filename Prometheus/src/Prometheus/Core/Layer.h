@@ -1,6 +1,6 @@
 #pragma once
 #include "Prometheus/Events/Event.h"
-#include "Prometheus/Core.h"
+#include "Prometheus/Core/Core.h"
 #include <Prometheus/Core/Timestep.h>
 
 namespace Prometheus {

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <glm/glm.hpp>
-#include "Prometheus/Core.h"
+#include "Prometheus/Core/Core.h"
 
 namespace Prometheus {
 	

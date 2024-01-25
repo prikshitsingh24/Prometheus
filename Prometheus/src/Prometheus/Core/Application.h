@@ -1,9 +1,9 @@
 #pragma once
 #include "Core.h"
-#include <Prometheus/Window.h>
+#include "Prometheus/Core/Window.h"
 #include "Prometheus/Events/ApplicationEvent.h"
-#include "Prometheus/LayerStack.h"
-#include "Prometheus/Input.h"
+#include "Prometheus/Core/LayerStack.h"
+#include "Prometheus/Core/Input.h"
 #include "Prometheus/ImGui/ImGuiLayer.h"
 #include "Prometheus/Renderer/Shader.h"
 #include "Prometheus/Renderer/Buffer.h"

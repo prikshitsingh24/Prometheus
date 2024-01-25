@@ -1,5 +1,5 @@
 #pragma once
-#include "Prometheus/Core.h"
+#include "Prometheus/Core/Core.h"
 
 namespace Prometheus {
 

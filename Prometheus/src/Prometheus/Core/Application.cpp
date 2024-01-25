@@ -1,6 +1,6 @@
 #include "ptpch.h"
 #include "Application.h"
-#include "Prometheus/Log.h"
+#include "Prometheus/Core/Log.h"
 #include "Prometheus/Renderer/Renderer.h"
 #include <GLFW/glfw3.h>
 

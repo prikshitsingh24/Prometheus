@@ -1,7 +1,7 @@
 #include "ptpch.h"
 #include "OrthographicCameraController.h"
-#include "Prometheus/Input.h"
-#include "Prometheus/KeyCodes.h"
+#include "Prometheus/Core/Input.h"
+#include "Prometheus/Core/KeyCodes.h"
 namespace Prometheus {
 	OrthographicCameraController::OrthographicCameraController(float aspectRatio, bool rotation)
 		:m_AspectRatio(aspectRatio),m_Camera(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel,-m_ZoomLevel,m_ZoomLevel),m_Rotation(rotation)

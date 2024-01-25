@@ -1,6 +1,6 @@
 #include "ptpch.h"
 #include "OpenGLShader.h"
-#include "Prometheus/Log.h"
+#include "Prometheus/Core/Log.h"
 #include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
 

@@ -1,7 +1,7 @@
 #include "ptpch.h"
-#include "Buffer.h"
-#include "Renderer.h"
-#include "Prometheus/Core.h"
+#include "Prometheus/Renderer/Buffer.h"
+#include "Prometheus/Renderer/Renderer.h"
+#include "Prometheus/Core/Core.h"
 #include "Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Prometheus {

@@ -2,11 +2,11 @@
 
 //For use by Prometheus application
 
-#include "Prometheus/Application.h"
-#include "Prometheus/Input.h"
-#include "Prometheus/KeyCodes.h"
-#include "Prometheus/MouseButtonCodes.h"
-#include "Prometheus/Layer.h"
+#include "Prometheus/Core/Application.h"
+#include "Prometheus/Core/Input.h"
+#include "Prometheus/Core/KeyCodes.h"
+#include "Prometheus/Core/MouseButtonCodes.h"
+#include "Prometheus/Core/Layer.h"
 #include "Prometheus/ImGui/ImGuiLayer.h"
 #include "Prometheus/Core/Timestep.h"
 #include "Prometheus/OrthographicCameraController.h"
@@ -23,11 +23,11 @@
 
 
 //------------------Logging--------------------
-#include "Prometheus/Log.h"
+#include "Prometheus/Core/Log.h"
 //----------------------------------------------
 
 
 //-----------------Entry point--------------------
-#include "Prometheus/EntryPoint.h"
+#include "Prometheus/Core/EntryPoint.h"
 //----------------------------------------------
 
