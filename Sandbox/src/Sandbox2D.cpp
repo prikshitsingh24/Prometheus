@@ -26,7 +26,8 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 
 
 	Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
-	Prometheus::Renderer2D::DrawQuad({ 0.0f,0.0f }, { 1.0f,1.0f }, { 0.8f,0.2f,0.3f,1.0f });
+	Prometheus::Renderer2D::DrawQuad({ 0.5f,0.5f }, { 0.8f,0.8f }, m_SquareColor);
+	Prometheus::Renderer2D::DrawQuad({ 0.5f,-0.5f }, { 0.5f,0.75f }, m_SquareColor2);
 	Prometheus::Renderer2D::EndScene();
 
 
@@ -34,9 +35,11 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 
 void Sandbox2D::OnImGuiRender()
 {
-	ImGui::Begin("Settings");
+	ImGui::Begin("Color Picker");
 	ImGui::ColorEdit4("Square color", glm::value_ptr(m_SquareColor));
+	ImGui::ColorEdit4("Square color2", glm::value_ptr(m_SquareColor2));
 	ImGui::End();
+
 }
 
 void Sandbox2D::OnEvent(Prometheus::Event& event)

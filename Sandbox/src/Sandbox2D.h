@@ -16,4 +16,5 @@ private:
 	Prometheus::Ref<Prometheus::Shader> m_Shader;
 	Prometheus::Ref<Prometheus::VertexArray> m_SquareVA;
 	glm::vec4 m_SquareColor = { 0.2f,0.3f,0.8f,1.0f };
+	glm::vec4 m_SquareColor2 = { 0.2f,0.3f,0.8f,1.0f };
 };
