@@ -13,6 +13,7 @@
 
 //----------------Renderer---------------------------
 #include "Prometheus/Renderer/Renderer.h"
+#include "Prometheus/Renderer/Renderer2D.h"
 #include "Prometheus/Renderer/RenderCommand.h"
 #include "Prometheus/Renderer/Buffer.h"
 #include "Prometheus/Renderer/Shader.h"
@@ -27,7 +28,4 @@
 //----------------------------------------------
 
 
-//-----------------Entry point--------------------
-#include "Prometheus/Core/EntryPoint.h"
-//----------------------------------------------
 

@@ -2,12 +2,14 @@
 #include "Renderer.h"
 #include "RenderCommand.h"
 #include "Platform/OpenGL/OpenGLShader.h"
+#include "Prometheus/Renderer/Renderer2D.h"
 namespace Prometheus {
 	Renderer::SceneData* Renderer::m_SceneData = new Renderer::SceneData();
 
 	void Renderer::Init()
 	{
 		RenderCommand::Init();
+		Renderer2D::Init();
 	}
 
 	void Renderer::BeginScene(OrthographicCamera& camera)

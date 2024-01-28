@@ -5,7 +5,7 @@
 
 namespace Prometheus {
 
-	VertexArray* VertexArray::Create()
+	Ref<VertexArray> VertexArray::Create()
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -13,7 +13,7 @@ namespace Prometheus {
 				PT_CORE_ASSERT(false, "RendererAPI::None is currently not supported!!");
 				return nullptr;
 		case RendererAPI::API::OpenGL:
-				return new OpenGLVertexArray();
+				return std::make_shared<OpenGLVertexArray>();
 		}
 		PT_CORE_ASSERT(false, "Unknown renderer api");
 		return nullptr;
