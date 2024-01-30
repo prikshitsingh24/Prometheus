@@ -9,7 +9,9 @@ Sandbox2D::Sandbox2D()
 }
 void Sandbox2D::OnAttach()
 {
-	
+	m_Sword = Prometheus::Texture2D::Create("assets/textures/1.png");
+	m_Tiles = Prometheus::Texture2D::Create("assets/textures/tiles.png");
+
 }
 
 void Sandbox2D::OnDetach()
@@ -27,7 +29,9 @@ void Sandbox2D::OnUpdate(Prometheus::Timestep ts)
 
 	Prometheus::Renderer2D::BeginScene(m_CameraController.GetCamera());
 	Prometheus::Renderer2D::DrawQuad({ 0.5f,0.5f }, { 0.8f,0.8f }, m_SquareColor);
-	Prometheus::Renderer2D::DrawQuad({ 0.5f,-0.5f }, { 0.5f,0.75f }, m_SquareColor2);
+	Prometheus::Renderer2D::DrawQuad({ 0.5f,-0.5f }, { 0.15f,0.75f }, m_SquareColor2);
+	Prometheus::Renderer2D::DrawQuad({ 3.0f,-0.5f }, { 1.0f,1.0f }, m_SquareColor2);
+	Prometheus::Renderer2D::DrawQuad({ 0.0f,0.0f,-0.2f }, { 10.0f,10.0f }, m_Tiles);
 	Prometheus::Renderer2D::EndScene();
 
 
